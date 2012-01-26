@@ -28,7 +28,7 @@
               <a href="/">首页</a>
             </li>
             <li>
-              <a href="/login">登陆</a>
+              <a href="#" id="login">登陆</a>
             </li>
           </ul>
         </div>
@@ -54,7 +54,8 @@
     <script>window.jQuery || document.write('<script src="/js/libs/jquery-1.7.0.min.js"><\/script>')</script>
     <script src=" http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=783698549" type="text/javascript" charset="utf-8"></script>
     <script>
-      var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview'], ['_trackPageLoadTime']]; ( function(d, t) {
+      var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview'], ['_trackPageLoadTime']];
+      ( function(d, t) {
         var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
         g.src = ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js';
         s.parentNode.insertBefore(g, s)
@@ -64,5 +65,15 @@
     $(function() { Modernizr.load([{load:'/ie6update/ie6update.js'}]); });
 
     </script><![endif]-->
+    <script>
+      $(function() {
+        $('#login').click(function() {
+          WB2.login(function(data) {
+            console.log(data);
+          });
+        });
+      });
+
+    </script>
   </body>
 </html>
